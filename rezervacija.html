@@ -19,6 +19,63 @@
             <li><a href="rezervacija.html">Rezervacija</a></li>
         </ul>
     </nav>
+    <main>
+        <h1>Rezervacija mize</h1>
+        <form action="rezervacija.html" method="get">
+            <fieldset>
+                <legend>Osebni podatki</legend>
+                <label for="ime">Ime:</label>
+                <input type="text" id="ime" name="ime" placeholder="Janez" required>
+                <label for="priimek">Priimek:</label>
+                <input type="text" id="priimek" name="priimek" placeholder="Novak" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="janez.novak@email.com" required>
+                <label for="telefon">Tel. št.:</label>
+                <input type="tel" id="telefon" name="telefon" placeholder="+386 40 123 456" required>
+            </fieldset>
+            <fieldset>
+                <legend>Podrobnosti rezervacije</legend>
+                <label for="datum">Datum:</label>
+                <input type="date" id="datum" name="datum" required>
+                <label for="cas">Čas:</label>
+                <input type="time" id="cas" name="cas" required>
+                <label for="st_gostov">Število gostov:</label>
+                <input type="number" id="st_gostov" name="st_gostov" value="2" min="1" max="20" required>
+                <label for="prostor">Prostor:</label>
+                <select id="prostor" name="prostor">
+                    <option value="notranjost">Notranjost</option>
+                    <option value="terasa">Terasa</option>
+                    <option value="zasebna_soba">Zasebna soba</option>
+                </select>
+                <p>Priložnost:</p>
+                <input type="radio" id="brez" name="priloznost" value="brez" checked>
+                <label for="brez">Brez</label>
+                <input type="radio" id="rojstni_dan" name="priloznost" value="rojstni_dan">
+                <label for="rojstni_dan">Rojstni dan</label>
+                <input type="radio" id="obletnica" name="priloznost" value="obletnica">
+                <label for="obletnica">Obletnica</label>
+                <input type="radio" id="poslovno_srecanje" name="priloznost" value="poslovno_srecanje">
+                <label for="poslovno_srecanje">Poslovno srečanje</label>
+            </fieldset>
+            <fieldset>
+                <legend>Dodatne želje</legend>
+                <p>Prehranske omejitve:</p>
+                <input type="checkbox" id="brez_glutena" name="prehranske_omejitve" value="brez_glutena">
+                <label for="brez_glutena">Brez glutena</label>
+                <input type="checkbox" id="brez_laktoze" name="prehranske_omejitve" value="brez_laktoze">
+                <label for="brez_laktoze">Brez laktoze</label>
+                <input type="checkbox" id="vegansko" name="prehranske_omejitve" value="vegansko">
+                <label for="vegansko">Vegansko</label>
+                <input type="checkbox" id="vegetarijansko" name="prehranske_omejitve" value="vegetarijansko">
+                <label for="vegetarijansko">Vegetarijansko</label>
+                <br><label for="opombe">Opombe:</label>
+                <textarea id="opombe" name="opombe" rows="4" cols="50" placeholder="Napišite posebne zahteve ali opombe..."></textarea>
+            </fieldset>
+            <input type="checkbox" id="soglasje" name="soglasje" required>
+            <label for="soglasje">Soglašam z obdelavo osebnih podatkov</label><br>
+            <input type="submit" value="Rezerviraj">
+        </form>
+    </main>
     <footer>
         <address>
             <p>Pizzeria L'Antica Pirano</p>
