@@ -1,0 +1,95 @@
+/*----------------------------------------------------------------------------------*/
+/*                                                                                  */
+/*                                                                                  */
+/*                                CSS za vse                                        */
+/*                                                                                  */
+/*                                                                                  */
+/*----------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --barva-primarna: rgb(255, 136, 0);
+    --barva-poudarek: rgb(255, 0, 0);
+    --barva-ozadje: rgb(245, 245, 220);
+    --barva-besedilo: rgb(0, 0, 0);
+}
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: serif;
+}
+
+header, footer {
+    background-color: rgb(146, 146, 99);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Rye', serif;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li a {
+    background-color: var(--barva-primarna);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--barva-besedilo);
+}
+
+li a:hover {
+    background-color: var(--barva-poudarek);
+    color: white;
+}
+
+#active {
+    background-color: var(--barva-poudarek);
+    color: white;
+}
+
+body {
+    /* font-family: 'Rye', cursive; */
+    background-color: var(--barva-ozadje);
+    color: var(--barva-besedilo);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Rye', cursive;
+    color: var(--barva-primarna);
+    text-align: center;
+    margin-top: 20px;
+}
