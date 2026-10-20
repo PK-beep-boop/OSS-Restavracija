@@ -24,7 +24,7 @@ main {
 }
 
 body {
-    font-family: serif;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 header, footer {
@@ -37,6 +37,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+h2 {
+    border-bottom: 3px solid black;
 }
 
 #logo {
@@ -80,7 +84,7 @@ li a:hover {
 }
 
 body {
-    /* font-family: 'Rye', cursive; */
+    /* font-family: 'Rye', serif; */
     background-color: var(--barva-ozadje);
     color: var(--barva-besedilo);
     margin: 0;
@@ -88,8 +92,77 @@ body {
 }
 
 h1 {
-    font-family: 'Rye', cursive;
+    font-family: 'Rye', serif;
     color: var(--barva-primarna);
     text-align: center;
     margin-top: 20px;
+}
+/*----------------------------------------------------------------------------------*/
+/*                                                                                  */
+/*                                                                                  */
+/*                               CSS za index                                       */
+/*                                                                                  */
+/*                                                                                  */
+/*----------------------------------------------------------------------------------*/
+#uvod {
+    min-height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../slike/pizzeria-(cropped).jpg');
+    background-size: cover;
+    background-position: center; /* Obdrži čim več sredine, ko background-size: cover odreže dele slike */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#uvod p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#uvod p a {
+    padding: 10px;
+    background-color: var(--barva-primarna);
+    border-radius: 10px;
+    color: var(--barva-besedilo);
+}
+
+#uvod p a:hover {
+    background-color: var(--barva-poudarek);
+    color: white;
+}
+
+#izpostavljeno {
+    display: flex;
+}
+
+.kartice {
+    margin: 0 20px;
+    padding: 0 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.kartice figure img {
+    background-color: rgb(160, 82, 82);
+    border-radius: 10px;
+    padding: 5px;
+    height: 200px;
+    filter: drop-shadow(5px 5px rgba(98, 51, 51, 0.5));
+}
+
+.kartice figure {
+    position: relative /* To ne spremeni pozicije el. figure amapk le omogoči, da se id "novo" zasidra nanj (le-ta išče element, ki nima position: static) */
+}
+
+#novo {
+    position: absolute;
+    right: 18px;
+    top: 5px;
+    z-index: 99999;
+    background-color: var(--barva-poudarek);
+    padding: 5px;
+    border-radius: 10px;
 }
