@@ -23,7 +23,7 @@ main {
     margin: 0 auto;
 }
 
-body {
+body, input {
     font-family:Georgia, 'Times New Roman', Times, serif
 }
 
@@ -84,7 +84,6 @@ li a:hover {
 }
 
 body {
-    /* font-family: 'Rye', serif; */
     background-color: var(--barva-ozadje);
     color: var(--barva-besedilo);
     margin: 0;
@@ -196,4 +195,89 @@ table tbody tr:hover {
 
 td {
     padding: 20px;
+}
+/*----------------------------------------------------------------------------------*/
+/*                                                                                  */
+/*                                                                                  */
+/*                             CSS za rezervacijo                                   */
+/*                                                                                  */
+/*                                                                                  */
+/*----------------------------------------------------------------------------------*/
+
+fieldset {
+    border-radius: 20px;
+    background-color: white;
+    border-top: 4px solid rgb(255, 136, 0);
+    margin: 20px 0
+}
+
+legend {
+    background-color: rgb(255, 136, 0);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.vrstica {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Omogoči, da se elementi v vrstici zlijejo v novo vrstico, če zmanjka prostora */
+    padding: 10px 0;
+}
+
+.radio-item, .checkbox-item {
+    display: flex;
+    gap: 5px;
+}
+
+.radio-label, .checkbox-item label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+label, .span-as-label {
+    width: 130px;
+    flex-shrink: 0; /* Element se nikoli ne zmanjša (tudi na manjših zaslonih) */
+}
+
+input {
+    flex-grow: 1; /* Element zavzame ves prazen prostor */
+    height: 30px;
+}
+
+input:focus {
+    outline: 1px solid blue;
+}
+
+#soglasje {
+    width: auto;
+}
+
+.button {
+    border-radius: 25px;
+    border: 0;
+    background-color: var(--barva-primarna);
+    color: white;
+    height: auto;
+    padding: 10px;
+}
+
+.button[type="reset"] {
+    background-color: rgb(245, 245, 220);
+    border: 1px solid black;
+    color: var(--barva-besedilo);
+}
+
+.button:hover {
+    background-color: var(--barva-poudarek);
+    cursor: pointer;
+}
+
+#button-container {
+    text-align: right;
+}
+
+textarea {
+    resize: none;
 }
