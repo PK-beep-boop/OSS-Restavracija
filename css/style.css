@@ -39,7 +39,7 @@ header {
     justify-content: space-between;
 }
 
-h2 {
+h2, h3 {
     border-bottom: 3px solid black;
 }
 
@@ -280,4 +280,37 @@ input:focus {
 
 textarea {
     resize: none;
+}
+/*----------------------------------------------------------------------------------*/
+/*                                                                                  */
+/*                                                                                  */
+/*                               CSS za recepte                                     */
+/*                                                                                  */
+/*                                                                                  */
+/*----------------------------------------------------------------------------------*/
+
+#seznam-receptov {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+}
+
+.container-top {
+    display: flex;
+}
+
+.kartice-recepti {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+.kartice-recepti img {
+    border-radius: 10px;
+}
+
+.na-vrh {
+    text-align: right;
 }
