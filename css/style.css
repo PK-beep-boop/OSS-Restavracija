@@ -254,7 +254,7 @@ input:focus {
     outline: 1px solid blue;
 }
 
-#soglasje {
+#soglasje-label {
     width: auto;
 }
 
@@ -358,3 +358,6 @@ tbody tr td:nth-child(1) {
     border-left: 5px solid red;
 }
 
+iframe {
+    width: 100%;
+}
