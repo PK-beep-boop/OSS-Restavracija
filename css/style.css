@@ -96,6 +96,10 @@ h1 {
     text-align: center;
     margin-top: 20px;
 }
+
+.copy {
+    margin: 0;
+}
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
 /*                                                                                  */
@@ -172,23 +176,23 @@ h1 {
 /*                                                                                  */
 /*                                                                                  */
 /*----------------------------------------------------------------------------------*/
-table {
+.jedilnik-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-table thead th {
+.jedilnik-table thead th {
     background-color: rgb(183, 28, 28);
     padding: 10px 0;
 }
 
-table tbody tr:nth-child(even) {
+.jedilnik-table tbody tr:nth-child(even) {
     background-color: rgb(255, 204, 204);
 }
 
-table tbody tr:hover {
+.jedilnik-table tbody tr:hover {
     background-color: rgb(255, 136, 0);
     color: white;
 }
@@ -314,3 +318,43 @@ textarea {
 .na-vrh {
     text-align: right;
 }
+
+/*----------------------------------------------------------------------------------*/
+/*                                                                                  */
+/*                                                                                  */
+/*                                CSS za o nas                                      */
+/*                                                                                  */
+/*                                                                                  */
+/*----------------------------------------------------------------------------------*/
+
+.container-zgodba {
+    display: flex;
+}
+
+#delovni-cas {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-collapse: collapse;
+}
+
+#delovni-cas th {
+    background-color: var(--barva-primarna);
+    border-left: 5px solid var(--barva-primarna);
+}
+
+#delovni-cas td {
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+tbody tr td:nth-child(1) {
+    font-weight: bold;
+}
+
+#zaprto td {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+#zaprto {
+    border-left: 5px solid red;
+}
+
