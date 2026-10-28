@@ -23,6 +23,7 @@
     --barva-tabela-primary: var(--barva-primarna);
     --barva-tabela-secondary: var(--barva-poudarek);
     --barva-gradient: rgba(0, 0, 0, 0.5);
+    --barva-border: rgb(0,0,0);
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -37,6 +38,7 @@
         --barva-tabela-primary: var(--barva-primarna);
         --barva-tabela-secondary: var(--barva-poudarek);
         --barva-gradient: rgba(108, 108, 108, 0.5);
+        --barva-border: rgb(255, 255, 255);
     }
 }
 
@@ -79,16 +81,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--barva-border);
 }
 
 footer {
-    border-top: 1px solid black;
+    border-top: 1px solid var(--barva-border);
     margin-top: 10px;
 }
 
 h2, h3 {
-    border-bottom: 3px solid var(--barva-poudarek);
+    border-bottom: 3px solid var(--barva-border);
 }
 
 #logo {
