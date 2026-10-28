@@ -12,27 +12,27 @@
 }
 
 :root {
-    --barva-primarna: rgb(247, 89, 36);
-    --barva-poudarek: rgb(222, 193, 108);
-    --barva-ozadje: rgb(219, 110, 110);
+    --barva-primarna: rgb(188, 108, 37);
+    --barva-poudarek: rgb(96, 108, 56);
+    --barva-ozadje: rgb(141, 161, 75);
     --barva-ozadje-secondary: var(--barva-poudarek);
     --barva-besedilo: rgb(0, 0, 0);
     --barva-besedilo-poudarek: rgb(255, 255, 255);
-    --barva-footer-header: rgb(222, 109, 64);
-    --barva-tabela-head: rgb(183, 28, 28);
+    --barva-footer-header: rgb(66, 88, 40);
+    --barva-tabela-head: var(--barva-footer-header);
     --barva-tabela-primary: var(--barva-primarna);
     --barva-tabela-secondary: var(--barva-poudarek);
     --barva-gradient: rgba(0, 0, 0, 0.5);
 }
 @media (prefers-color-scheme: dark) {
     :root {
-        --barva-primarna: rgb(138, 99, 0);
-        --barva-poudarek: rgb(108, 93, 56);
-        --barva-ozadje: rgb(61, 30, 30);
+        --barva-primarna: rgb(87, 63, 0);
+        --barva-poudarek: rgb(79, 68, 41);
+        --barva-ozadje: rgb(33, 16, 16);
         --barva-ozadje-secondary: var(--barva-poudarek);
         --barva-besedilo: rgb(255, 255, 255);
         --barva-besedilo-poudarek: rgb(0, 0, 0);
-        --barva-footer-header: rgb(110, 55, 33);
+        --barva-footer-header: rgb(71, 35, 21);
         --barva-tabela-head: rgb(183, 28, 28);
         --barva-tabela-primary: var(--barva-primarna);
         --barva-tabela-secondary: var(--barva-poudarek);
@@ -79,6 +79,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+footer {
+    border-top: 1px solid black;
+    margin-top: 10px;
 }
 
 h2, h3 {
@@ -140,6 +146,11 @@ h1 {
     text-align: center;
     margin-top: 20px;
     animation: titleFadeIn 1s ease-out;
+    text-shadow: /* Outline */
+    -1px -1px 0 #000, 
+    1px -1px 0 #000, 
+    -1px  1px 0 #000, 
+    1px  1px 0 #000;
 }
 
 .copy {
