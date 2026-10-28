@@ -541,3 +541,15 @@ nav a {
         display: block;
     }
 }
+
+/*                                                      */
+/*                O nas responsive                      */
+/*                                                      */
+@media screen and (max-width: 600px) {
+    .container-zgodba {
+        display: block;
+    }
+    .container-zgodba img {
+    max-width: 100%;
+}
+}
