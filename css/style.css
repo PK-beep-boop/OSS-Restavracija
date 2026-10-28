@@ -12,10 +12,32 @@
 }
 
 :root {
-    --barva-primarna: rgb(255, 136, 0);
-    --barva-poudarek: rgb(255, 0, 0);
-    --barva-ozadje: rgb(245, 245, 220);
+    --barva-primarna: rgb(247, 89, 36);
+    --barva-poudarek: rgb(222, 193, 108);
+    --barva-ozadje: rgb(219, 110, 110);
+    --barva-ozadje-secondary: var(--barva-poudarek);
     --barva-besedilo: rgb(0, 0, 0);
+    --barva-besedilo-poudarek: rgb(255, 255, 255);
+    --barva-footer-header: rgb(222, 109, 64);
+    --barva-tabela-head: rgb(183, 28, 28);
+    --barva-tabela-primary: var(--barva-primarna);
+    --barva-tabela-secondary: var(--barva-poudarek);
+    --barva-gradient: rgba(0, 0, 0, 0.5);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --barva-primarna: rgb(138, 99, 0);
+        --barva-poudarek: rgb(108, 93, 56);
+        --barva-ozadje: rgb(61, 30, 30);
+        --barva-ozadje-secondary: var(--barva-poudarek);
+        --barva-besedilo: rgb(255, 255, 255);
+        --barva-besedilo-poudarek: rgb(0, 0, 0);
+        --barva-footer-header: rgb(110, 55, 33);
+        --barva-tabela-head: rgb(183, 28, 28);
+        --barva-tabela-primary: var(--barva-primarna);
+        --barva-tabela-secondary: var(--barva-poudarek);
+        --barva-gradient: rgba(108, 108, 108, 0.5);
+    }
 }
 
 html {
@@ -24,6 +46,15 @@ html {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+    h1 {
+        animation: none !important;
+    }
+    .kartice {
+        transition: none !important; 
+    }
+    .kartice:hover {
+        transition: none !important;
     }
 }
 
@@ -38,7 +69,7 @@ body, input {
 }
 
 header, footer {
-    background-color: rgb(146, 146, 99);
+    background-color: var(--barva-footer-header);
     z-index: 3;
 }
 
@@ -51,7 +82,7 @@ header {
 }
 
 h2, h3 {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid var(--barva-poudarek);
 }
 
 #logo {
@@ -81,19 +112,19 @@ li a {
     background-color: var(--barva-primarna);
     padding: 10px;
     border-radius: 10px;
-    color: var(--barva-besedilo);
+    color: var(--barva-besedilo-poudarek);
     transition: all 0.3s ease;
 }
 
 li a:hover {
     background-color: var(--barva-poudarek);
-    color: white;
+    color: var(--barva-besedilo);
     transition: all 0.3s ease;
 }
 
 #active {
     background-color: var(--barva-poudarek);
-    color: white;
+    color: var(--barva-besedilo);
 }
 
 body {
@@ -127,7 +158,7 @@ img {
 /*----------------------------------------------------------------------------------*/
 #uvod {
     min-height: 60vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../slike/pizzeria-(cropped).jpg');
+    background-image: linear-gradient(var(--barva-gradient), var(--barva-gradient)), url('../slike/pizzeria-(cropped).jpg');
     background-size: cover;
     background-position: center; /* Obdrži čim več sredine, ko background-size: cover odreže dele slike */
     display: flex;
@@ -139,7 +170,7 @@ img {
 }
 
 #uvod p {
-    color: white;
+    color: var(--barva-besedilo-poudarek);
     font-size: 1.5rem;
 }
 
@@ -147,13 +178,13 @@ img {
     padding: 10px;
     background-color: var(--barva-primarna);
     border-radius: 10px;
-    color: var(--barva-besedilo);
+    color: var(--barva-besedilo-poudarek);
     transition: all 0.3s ease;
 }
 
 #uvod p a:hover {
     background-color: var(--barva-poudarek);
-    color: white;
+    color: var(--barva-besedilo);
     transition: all 0.3s ease;
 }
 
@@ -169,7 +200,7 @@ img {
 .kartice {
     margin: 0 20px;
     padding: 0 20px;
-    background-color: white;
+    background-color: var(--barva-ozadje-secondary);
     border-radius: 10px;
     transition: all 0.3s ease;
 }
@@ -221,18 +252,23 @@ img {
 }
 
 .jedilnik-table thead th {
-    background-color: rgb(183, 28, 28);
+    background-color: var(--barva-tabela-head);
     padding: 10px 0;
 }
 
+.jedilnik-table tbody tr:nth-child(odd){
+    background-color: var(--barva-tabela-primary);
+    transition: all 0.3s ease;
+}
+
 .jedilnik-table tbody tr:nth-child(even) {
-    background-color: rgb(255, 204, 204);
+    background-color: var(--barva-tabela-secondary);
     transition: all 0.3s ease;
 }
 
 .jedilnik-table tbody tr:hover {
     background-color: rgb(255, 136, 0);
-    color: white;
+    color: var(--barva-besedilo-poudarek);
     transition: all 0.3s ease;
 }
 
@@ -257,14 +293,14 @@ td {
 
 fieldset {
     border-radius: 20px;
-    background-color: white;
-    border-top: 4px solid rgb(255, 136, 0);
+    background-color: var(--barva-ozadje-secondary);
+    border-top: 4px solid var(--barva-primarna);
     margin: 20px 0
 }
 
 legend {
-    background-color: rgb(255, 136, 0);
-    color: white;
+    background-color: var(--barva-primarna);
+    color: var(--barva-besedilo);
     padding: 10px;
     border-radius: 20px;
 }
@@ -312,7 +348,7 @@ input:focus {
     border-radius: 25px;
     border: 0;
     background-color: var(--barva-primarna);
-    color: white;
+    color: var(--barva-besedilo);
     height: auto;
     padding: 10px;
     transition: all 0.3s ease;
@@ -320,7 +356,7 @@ input:focus {
 
 .button[type="reset"] {
     background-color: rgb(245, 245, 220);
-    border: 1px solid black;
+    border: 1px solid var(--barva-primarna);
     color: var(--barva-besedilo);
 }
 
@@ -357,7 +393,7 @@ textarea {
 }
 
 .kartice-recepti {
-    background-color: white;
+    background-color: var(--barva-ozadje-secondary);
     border-radius: 10px;
     padding: 10px 20px;
     margin: 20px;
@@ -399,8 +435,8 @@ textarea {
 }
 
 #delovni-cas td {
-    background-color: white;
-    border-bottom: 1px solid black;
+    background-color: var(--barva-ozadje-secondary);
+    border-bottom: 1px solid var(--barva-primarna);
 }
 
 tbody tr td:nth-child(1) {
