@@ -73,11 +73,13 @@ li a {
     padding: 10px;
     border-radius: 10px;
     color: var(--barva-besedilo);
+    transition: all 0.3s ease;
 }
 
 li a:hover {
     background-color: var(--barva-poudarek);
     color: white;
+    transition: all 0.3s ease;
 }
 
 #active {
@@ -97,15 +99,16 @@ h1 {
     color: var(--barva-primarna);
     text-align: center;
     margin-top: 20px;
+    animation: titleFadeIn 1s ease-out;
 }
 
 .copy {
     margin: 0;
 }
-
+/*
 img {
     max-width: 100%;
-}
+}*/
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
 /*                                                                                  */
@@ -136,11 +139,13 @@ img {
     background-color: var(--barva-primarna);
     border-radius: 10px;
     color: var(--barva-besedilo);
+    transition: all 0.3s ease;
 }
 
 #uvod p a:hover {
     background-color: var(--barva-poudarek);
     color: white;
+    transition: all 0.3s ease;
 }
 
 #izpostavljeno {
@@ -157,6 +162,13 @@ img {
     padding: 0 20px;
     background-color: white;
     border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.kartice:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .kartice figure img {
@@ -206,11 +218,17 @@ img {
 
 .jedilnik-table tbody tr:nth-child(even) {
     background-color: rgb(255, 204, 204);
+    transition: all 0.3s ease;
 }
 
 .jedilnik-table tbody tr:hover {
     background-color: rgb(255, 136, 0);
     color: white;
+    transition: all 0.3s ease;
+}
+
+.jedilnik-table tbody tr {
+    transition: all 0.3s ease;
 }
 
 td {
@@ -288,6 +306,7 @@ input:focus {
     color: white;
     height: auto;
     padding: 10px;
+    transition: all 0.3s ease;
 }
 
 .button[type="reset"] {
@@ -299,6 +318,7 @@ input:focus {
 .button:hover {
     background-color: var(--barva-poudarek);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 #button-container {
@@ -481,5 +501,20 @@ nav a {
     .vrstica {
         flex-direction: column;
         align-items: stretch;
+    }
+}
+
+/*                                                      */
+/*              Animacija h1 na index                   */
+/*                                                      */
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
