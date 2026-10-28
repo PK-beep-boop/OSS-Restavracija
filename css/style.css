@@ -6,6 +6,7 @@
 /*                                                                                  */
 /*----------------------------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -360,4 +361,59 @@ tbody tr td:nth-child(1) {
 
 iframe {
     width: 100%;
+}
+
+
+/*                                                      */
+/*                 Nav responsive                       */
+/*                                                      */
+
+
+nav {
+    display: flex;
+    justify-content: center
+}
+
+nav a {
+    display: block;
+}
+
+#menuToggle, #menuButton {
+    display: none;
+}
+
+#menuToggle:checked ~ ul li a {
+    display: block
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        display: block
+    }
+    #menuToggle ~ ul li a {
+        display: none
+    }
+    #menuButton {
+        display: block
+    }
+    nav ul {
+        display: block;
+    }
+    header {
+        display: block;
+    }
+    nav ul li {
+        margin-right: 0;
+    }
+    label {
+        width: auto;
+    }
+    #header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #header-top label {
+        font-size: 2rem;
+    }
 }
