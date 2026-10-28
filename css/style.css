@@ -30,6 +30,7 @@ body, input {
 
 header, footer {
     background-color: rgb(146, 146, 99);
+    z-index: 3;
 }
 
 header {
@@ -101,6 +102,10 @@ h1 {
 .copy {
     margin: 0;
 }
+
+img {
+    max-width: 100%;
+}
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
 /*                                                                                  */
@@ -142,6 +147,11 @@ h1 {
     display: flex;
 }
 
+#slika-okvir {
+    position: relative;
+    display: inline-block;
+}
+
 .kartice {
     margin: 0 20px;
     padding: 0 20px;
@@ -158,18 +168,23 @@ h1 {
 }
 
 .kartice figure {
-    position: relative /* To ne spremeni pozicije el. figure amapk le omogoči, da se id "novo" zasidra nanj (le-ta išče element, ki nima position: static) */
+    position: relative; /* To ne spremeni pozicije el. figure amapk le omogoči, da se id "novo" zasidra nanj (le-ta išče element, ki nima position: static) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #novo {
     position: absolute;
-    right: 18px;
-    top: 5px;
-    z-index: 99999;
+    right: 2%;
+    top: 2%;
+    z-index: 2;
     background-color: var(--barva-poudarek);
     padding: 5px;
     border-radius: 10px;
 }
+
+
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
 /*                                                                                  */
@@ -200,6 +215,10 @@ h1 {
 
 td {
     padding: 20px;
+}
+.tabela-odzzivna {
+    overflow-x: auto;
+    max-width: 100%;
 }
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
@@ -247,8 +266,11 @@ label, .span-as-label {
 }
 
 input {
-    flex-grow: 1; /* Element zavzame ves prazen prostor */
     height: 30px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"], select {
+    flex-grow: 1; /* Element zavzame ves prazen prostor */
 }
 
 input:focus {
@@ -415,5 +437,49 @@ nav a {
     }
     #header-top label {
         font-size: 2rem;
+    }
+}
+
+
+/**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+@media screen and (min-width: 601px) and (max-width: 999px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
+
+/*                                                      */
+/*            Izpostavljene responsive                  */
+/*                                                      */
+
+@media screen and (max-width: 600px) {
+    #izpostavljeno {
+        flex-direction: column;
+    }
+    .kartice {
+        margin-bottom: 10px;
+    }
+    .kartice figure img {
+        height: 400px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 999px) {
+    #izpostavljeno {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
+
+/*                                                      */
+/*             Rezervacija responsive                   */
+/*                                                      */
+
+@media screen and (max-width: 600px) {
+    .vrstica {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
