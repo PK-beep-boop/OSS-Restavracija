@@ -85,8 +85,10 @@ const jedilnik = [
     },
 ];
 
-function izrisiJedilnik() {
+function izrisiJedilnik(izbranaKategorija = "") {
     const vsebnik = document.getElementById("jedilnik");
+
+    vsebnik.innerHTML = ""
 
     const kategorije = [
         "Le Specialità della Casa (Hišne specialitete)",
@@ -94,7 +96,11 @@ function izrisiJedilnik() {
         "Orto e Natura (Zeleni vrt | Vegetarijanske in veganske)"
     ];
 
-    kategorije.forEach((kat) => { // isto kot py: for kat in kategorije
+    const kategorijeZaIzris = izbranaKategorija === ""
+    ? kategorije
+    : [izbranaKategorija]
+
+    kategorijeZaIzris.forEach((kat) => { // isto kot py: for kat in kategorije
         const jediVKategoriji = jedilnik.filter(jed => jed.kategorija === kat); // isto kot py: jedi_v_kategoriji = [jed for jed in jedilnik if jed['kategorija'] == kat]
 
         const divOdzivna = document.createElement("div");
@@ -151,6 +157,27 @@ function izrisiJedilnik() {
         })
     })
 }
+function nastaviFiltre() {
+    const gumbi = document.querySelectorAll(".gumb-filter");
 
-document.addEventListener("DOMContentLoaded", izrisiJedilnik);
+    function spremeniStatus() {
+            gumbi.forEach((gumb) => {
+            gumb.classList.remove("active-b")
+        })
+        this.classList.add("active-b")
+
+        const kat = this.getAttribute("data-kategorija");
+
+        izrisiJedilnik(kat)
+    }
+
+    gumbi.forEach((gumb) => {
+
+        gumb.addEventListener("click", spremeniStatus)
+    })
+
+}
+
+document.addEventListener("DOMContentLoaded", izrisiJedilnik(""));
+document.addEventListener("DOMContentLoaded", nastaviFiltre);
 // Event listener listens for an event to happen. In this case "DOMContentLoaded" (for the page to load). After the listener "hears" that the page has loaded it runs the function listed.
