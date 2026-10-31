@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1a74f6cd53.js" crossorigin="anonymous"></script>
+    <title>Jedilnik | Pizzeria L'Antica Pirano</title>
+</head>
+<body>
+    <header>
+        <div id="header-top">
+            <div id="logo">
+                <a href="index.html"><img src="slike/pizza-icon.svg" alt="logo" width="80"></a>
+                <p>Pizzeria L'Antica&nbsp;Pirano</p>
+            </div>
+            <label for="menuToggle" id="menuButton"><a><i class="fa-solid fa-bars"></i></a></label>
+        </div>
+        <nav>
+            <input type="checkbox" name="menuToggle" id="menuToggle">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Domov</a></li>
+                <li><a href="jedilnik.html" id="active"><i class="fa-solid fa-utensils"></i>Jedilnik</a></li>
+                <li><a href="recepti.html"><i class="fa-solid fa-book-open"></i>Recepti</a></li>
+                <li><a href="rezervacija.html"><i class="fa-solid fa-calendar-check"></i>Rezervacija</a></li>
+                <li><a href="o-nas.html"><i class="fa-solid fa-circle-info"></i>O&nbsp;nas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Jedilnik</h1>
+        <div id="filtri">
+            <button class="gumb-filter active-b" data-kategorija="">Vse</button>
+            <button class="gumb-filter" data-kategorija="Le Specialità della Casa (Hišne specialitete)">Hišne specialitete</button>
+            <button class="gumb-filter" data-kategorija="Le Classiche Rosse (Rdeče klasike)">Rdeče klasike</button>
+            <button class="gumb-filter" data-kategorija="Orto e Natura (Zeleni vrt | Vegetarijanske in veganske)">Vegetrijanske | veganske</button>  
+        </div>
+        <div id="jedilnik"></div>
+        <p>Vse cene vključujejo DDV in so v evrih (EUR).</p>
+    </main>
+    <footer>
+        <address>
+            <p>Pizzeria L'Antica Pirano</p>
+            <p><i class="fa-solid fa-location-dot"></i>Tartinijev trg 1, 6330 Piran, Slovenija</p>
+            <p><i class="fa-solid fa-phone"></i>Telefon: <a href="tel:+38640123456">+386 40 123 456</a></p>
+            <p><i class="fa-solid fa-envelope"></i>Email: <a href="mailto:info@lanticapirano.si">info@lanticapirano.si</a></p>
+        </address>
+        <p class="copy">&copy; 2026 Patrik Knuplež. Vse pravice pridržane.</p>
+    </footer>
+    <script src="js/jedilnik.js"></script>
+</body>
+</html>
