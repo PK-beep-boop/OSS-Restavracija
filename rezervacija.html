@@ -29,24 +29,28 @@
     </header>
     <main>
         <h1>Rezervacija mize</h1>
-        <form action="rezervacija.html" method="get">
+        <form action="rezervacija.html" method="get" novalidate>
             <fieldset>
                 <legend>Osebni podatki</legend>
                 <div class="vrstica">
                     <label for="ime">Ime:</label>
                     <input type="text" id="ime" name="ime" placeholder="Janez" required>
+                    <small class="error-msg" id="ime-error"></small>
                 </div>
                 <div class="vrstica">
                     <label for="priimek">Priimek:</label>
                     <input type="text" id="priimek" name="priimek" placeholder="Novak" required>
+                    <small class="error-msg" id="priimek-error"></small>
                 </div>
                 <div class="vrstica">
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="janez.novak@email.com"     required>
+                    <small class="error-msg" id="email-error"></small>
                 </div>
                 <div class="vrstica">
                     <label for="telefon">Tel. št.:</label>
-                    <input type="tel" id="telefon" name="telefon" placeholder="+386 40 123 456" required>
+                    <input type="tel" id="telefon" name="telefon" placeholder="040 123 456 ali 040123456" required>
+                    <small class="error-msg" id="telefon-error"></small>
                 </div>
             </fieldset>
             <fieldset>
@@ -54,14 +58,17 @@
                 <div class="vrstica">
                     <label for="datum">Datum:</label>
                     <input type="date" id="datum" name="datum" required>
+                    <small class="error-msg" id="datum-error"></small>
                 </div>
                 <div class="vrstica">
                     <label for="cas">Čas:</label>
                     <input type="time" id="cas" name="cas" required>
+                    <small class="error-msg" id="cas-error"></small>
                 </div>
                 <div class="vrstica">
                     <label for="st_gostov">Število gostov:</label>
-                    <input type="number" id="st_gostov" name="st_gostov" value="2" min="1" max="20" required>
+                    <input type="number" id="st_gostov" name="st_gostov" value="2" min="1" max="12" required>
+                    <small class="error-msg" id="st_gostov-error"></small>
                 </div>
                 <div class="vrstica">
                     <label for="prostor">Prostor:</label>
@@ -123,6 +130,7 @@
                     <div class="checkbox-item">
                         <input type="checkbox" id="soglasje" name="soglasje" required>
                         <label for="soglasje" id="soglasje-label">Soglašam z obdelavo osebnih podatkov</label>
+                        <small class="error-msg" id="soglasje-error"></small>
                     </div>
                 </div>
             </fieldset>
@@ -141,5 +149,6 @@
         </address>
         <p class="copy">&copy; 2026 Patrik Knuplež. Vse pravice pridržane.</p>
     </footer>
+    <script src="js/rezervacija.js"></script>
 </body>
 </html>

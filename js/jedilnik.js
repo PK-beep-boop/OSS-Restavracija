@@ -1,3 +1,4 @@
+// Deklaracija polja objektov z vsemi jedmi
 const jedilnik = [
     {
         naziv: "L'Antica Pirano",
@@ -84,7 +85,10 @@ const jedilnik = [
         cena: 13.20
     },
 ];
-
+/**
+ * Izriše tabelo jedilnik
+ * @param {string[]} izbranaKategorija - kategorija, katere jedi se bodo izpisale
+ */
 function izrisiJedilnik(izbranaKategorija = "") {
     const vsebnik = document.getElementById("jedilnik");
 
@@ -157,6 +161,9 @@ function izrisiJedilnik(izbranaKategorija = "") {
         })
     })
 }
+/**
+ * Upravlja gumbe za filtriranje
+ */
 function nastaviFiltre() {
     const gumbi = document.querySelectorAll(".gumb-filter");
 
