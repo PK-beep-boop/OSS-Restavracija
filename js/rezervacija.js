@@ -101,6 +101,7 @@ datumInput.addEventListener("input", function() {
     if (!value) {
         datumError.textContent = "Celoten datum je obvezen"
         datumInput.classList.add("invalid")
+        return
     }
 
     const chosenDate = new Date(value)
@@ -127,6 +128,7 @@ casInput.addEventListener("input", function() {
     if (!value) {
         casError.textContent = "Čas je obvezen"
         casInput.classList.add("invalid")
+        return
     }
     const [hours, minutes] = value.split(":").map(Number) // Najprej .split splita string pri dvopičju in nove (2) stringe da v array. Potem .map da vsako (2) število v Number function, ki pretvori string v dobesedno število
     if (hours < 12 || hours > 22 || (hours === 22 && minutes > 0)) {
@@ -146,6 +148,7 @@ st_gostovInput.addEventListener("input", function() {
     if (!value) {
         st_gostovError.textContent = "Št. gostov je obvezen podatek"
         st_gostovInput.classList.add("invalid")
+        return
     }
 
     if (value < 1 || value > 12) {
@@ -161,7 +164,6 @@ st_gostovInput.addEventListener("input", function() {
 
 soglasjeInput.addEventListener("input", function() {
     const value = soglasjeInput.checked
-    console.log(value)
     if (!value) {
         soglasjeError.textContent = "Soglasje je obvezno"
         soglasjeInput.classList.add("invalid")
@@ -171,4 +173,36 @@ soglasjeInput.addEventListener("input", function() {
         soglasjeInput.classList.remove("invalid")
         soglasjeInput.classList.add("valid")
     }
+})
+
+const obrazec = document.getElementById("obrazec-rezervacija")
+const povzetek = document.getElementById("povzetek")
+
+obrazec.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const vsaPolja = [imeInput, priimekInput, emailInput, telInput, datumInput, casInput, st_gostovInput, soglasjeInput]
+    vsaPolja.forEach(input => {
+        input.dispatchEvent(new Event("input")) // Sproži input event na vseh poljih (tudi tistih katerih uporabnik ni dotaknil)
+    })
+
+    const obstajaNapaka = document.querySelector(".invalid") // Potrebujemo je en napačen vnos
+
+    if (obstajaNapaka) {
+        return
+    }
+    else {
+        const slovenskiDatum = new Date(datumInput.value)
+        povzetek.innerHTML = `
+        <h3>Povzetek rezervacije</h3>
+        <p>Ime in priimek: ${imeInput.value.trim()} ${priimekInput.value.trim()}</p>
+        <p>Datum in čas: ${slovenskiDatum.toLocaleDateString("sl-SI")} ob ${casInput.value}</p>
+        <p>Št. oseb: ${st_gostovInput.value}</p>
+        `
+    }
+
+    obrazec.reset()
+
+    vsaPolja.forEach(input => input.classList.remove("valid"))
+    
 })
