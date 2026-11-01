@@ -51,7 +51,7 @@ priimekInput.addEventListener("input", function() {
         priimekInput.classList.add("invalid")
     }
     else {
-        imeError.textContent = ""
+        priimekError.textContent = ""
         priimekInput.classList.remove("invalid")
         priimekInput.classList.add("valid")
     }

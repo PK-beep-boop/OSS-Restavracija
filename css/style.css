@@ -348,10 +348,10 @@ input {
 input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"], select {
     flex-grow: 1; /* Element zavzame ves prazen prostor */
 }
-
+/*
 input:focus {
     outline: 1px solid blue;
-}
+}*/
 
 #soglasje-label {
     width: auto;
@@ -386,6 +386,15 @@ input:focus {
 textarea {
     resize: none;
 }
+
+.valid {
+    border: 3px solid greenyellow;
+}
+
+.invalid {
+    border: 2px solid red;
+}
+
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
 /*                                                                                  */
