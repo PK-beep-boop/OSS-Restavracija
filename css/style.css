@@ -322,7 +322,7 @@ legend {
     display: flex;
     align-items: center;
     flex-wrap: wrap; /* Omogoči, da se elementi v vrstici zlijejo v novo vrstico, če zmanjka prostora */
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .radio-item, .checkbox-item {
@@ -345,8 +345,8 @@ input {
     height: 30px;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"], select {
-    flex-grow: 1; /* Element zavzame ves prazen prostor */
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"] {
+    width: 60%;
 }
 /*
 input:focus {
@@ -395,6 +395,19 @@ textarea {
     border: 2px solid red;
 }
 
+.error-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.error-container small {
+    position: absolute;
+    color: orange;
+    top: 35px
+}
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
 /*                                                                                  */
