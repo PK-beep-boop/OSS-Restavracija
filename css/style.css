@@ -345,7 +345,7 @@ input {
     height: 30px;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"] {
+.input-width-60 {
     width: 60%;
 }
 /*
@@ -447,6 +447,9 @@ textarea {
     text-align: right;
 }
 
+.vnos-oseb {
+    width: 40px;
+}
 /*----------------------------------------------------------------------------------*/
 /*                                                                                  */
 /*                                                                                  */
