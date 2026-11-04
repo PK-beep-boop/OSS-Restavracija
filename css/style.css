@@ -344,9 +344,10 @@ label, .span-as-label {
 input {
     height: 30px;
 }
-
-.input-width-60 {
+@media screen and (min-width: 1000px) {
+    .input-width-60 {
     width: 60%;
+}    
 }
 /*
 input:focus {
